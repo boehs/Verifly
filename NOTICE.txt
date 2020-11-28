@@ -1,0 +1,5 @@
+Verifly
+Copyright 2020 boehs (https://github.com/boehs)
+
+This Product is in part, written using Python
+Copyright © 2001-2020 Python Software Foundation; All Rights Reserved
