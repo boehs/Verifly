@@ -6,3 +6,7 @@ Verifly is an antibot script. unlike common ones, Verify KICKS all members unles
 
 * https://github.com/boehs/Verifly
 * https://discord.com/api/oauth2/authorize?client_id=782341936135929866&permissions=67634307&scope=bot
+
+## More info
+
+![Bot in action](https://e.reeee.ee/yZdCIy.gif)
