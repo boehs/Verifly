@@ -27,7 +27,6 @@ async def on_ready():
         for line in file.readlines():
             users.append(line.rstrip('\n'))
     file.close()
-    print(str(users))
     await client.wait_until_ready()
 
 @client.event
@@ -42,7 +41,6 @@ async def on_member_join(member):
         if member.guild.id == config.base:
             pass
         else:
-            print("member joined")
             key = genkey.genkey(6, False)
             image.write(key, 'tempcapcha.png')
             await member.send("**PLEASE READ, YOU HAVE BEEN KICKED!** \n join " + config.server + " and enter your capcha in #verify without ANYTHING ELSE (case sensitive). \n you will be kicked from verifly, and you will be able to join your server. \n you MUST agree to discord TOS before proceeding", file=discord.File("tempcapcha.png"))
@@ -67,9 +65,7 @@ async def on_message(message):
                 await message.author.send("Hey mate! that key aint look too valid, sorry. if you think this is a issue, open a issue @ https://github.com/boehs/Verifly")
                 await message.delete()
             else:
-                print(str(keys))
                 keys.remove(str(msg))
-                print(str(keys))
                 with open("keys.txt", 'w') as output:
                     for row in keys:
                         output.write(str(row) + '\n')
