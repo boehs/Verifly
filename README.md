@@ -9,4 +9,4 @@ Verifly is an antibot script. unlike common ones, Verify KICKS all members unles
 
 ## More info
 
-![Bot in action](https://e.reeee.ee/yZdCIy.gif)
+![Bot in action](https://e.reeee.ee/aACI3V.gif)
