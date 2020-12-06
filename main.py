@@ -6,6 +6,11 @@ try:
     import config
 except:
     print("Plese rename democonfig to config")
+from captcha.image import ImageCaptcha
+from PIL.ImageFont import truetype
+import os
+
+image = ImageCaptcha(fonts=[r"BOD_R.ttf"])
 
 intents = discord.Intents.default()
 intents.members = True
@@ -39,8 +44,10 @@ async def on_member_join(member):
         else:
             print("member joined")
             key = genkey.genkey(6, False)
-            await member.send("**PLEASE READ, YOU HAVE BEEN KICKED!** \n Your Unique Key: " + key + "\n join " + config.server + " and enter your key in #verify without ANYTHING ELSE. \n you will be kicked from vefifly, and you will be able to join your server. \n you MUST agree to discord TOS before prociding")
+            image.write(key, 'tempcapcha.png')
+            await member.send("**PLEASE READ, YOU HAVE BEEN KICKED!** \n join " + config.server + " and enter your capcha in #verify without ANYTHING ELSE (case sensitive). \n you will be kicked from verifly, and you will be able to join your server. \n you MUST agree to discord TOS before proceeding", file=discord.File("tempcapcha.png"))
             await member.kick(reason="Has not verified")
+            os.remove("tempcapcha.png")
 
 @client.event
 async def on_message(message):
