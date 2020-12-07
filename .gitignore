@@ -2,3 +2,5 @@ config.py
 users.txt
 __pycache__
 keys.txt
+Pipfile
+Pipfile.lock
